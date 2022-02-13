@@ -28,6 +28,10 @@
 import streamlit as st
 from dataclasses import dataclass
 from typing import Any, List
+
+import os
+os.system('pip freeze | grep web')
+
 from web3 import Web3
 w3 = Web3(Web3.HTTPProvider('HTTP://127.0.0.1:7545'))
 ################################################################################
@@ -245,7 +249,7 @@ wage = hourly_rate * hours
 
 # @TODO
 # Write the `wage` calculation to the Streamlit sidebar
-st.sidebar.write("Wages Per Hour: " + str(hourly_rate) + " x " + str(hours) + " hours = $" + str(wage) + " wage")
+st.sidebar.write("Wages Per Hour: " + str(hourly_rate) + " x " + str(hours) + " hours = " + str(wage))
 
 ##########################################
 # Step 2 - Part 2:
@@ -272,7 +276,7 @@ if st.sidebar.button("Send Transaction"):
     # Call the `send_transaction` function and pass it 3 parameters:
     # Your `account`, the `candidate_address`, and the `wage` as parameters
     # Save the returned transaction hash as a variable named `transaction_hash`
-    transaction_hash = send_transaction(account, candidate_address, wage)
+    transaction_hash = send_transaction(w3, account, candidate_address, wage)
 
     # Markdown for the transaction hash
     st.sidebar.markdown("#### Validated Transaction Hash")
