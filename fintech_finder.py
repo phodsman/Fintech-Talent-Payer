@@ -25,14 +25,14 @@ from crypto_wallet import send_transaction
 # Database of Fintech Finder candidates including their name, digital address, rating and hourly cost per Ether.
 # For the purpopses of this application, a single Ether is currently valued at $1,500
 candidate_database = {
-    "Lane": ["Laighin", "0xaC8eB8B2ed5C4a0fC41a84Ee4950F417f67029F0", "4.3", .20, "Images/lane.jpeg"],
-    "Ash": ["Ashleigh", "0x2422858F9C4480c2724A309D58Ffd7Ac8bF65396", "5.0", .33, "Images/ash.jpeg"],
-    "Jo": ["Joséphine", "0x8fD00f170FDf3772C5ebdCD90bF257316c69BA45", "4.7", .19, "Images/jo.jpeg"],
-    "Kendall": ["Kentdalr", "0x8fD00f170FDf3772C5ebdCD90bF257316c69BA45", "4.1", .16, "Images/kendall.jpeg"]
+    "Laighin": ["Laighin", "0xaC8eB8B2ed5C4a0fC41a84Ee4950F417f67029F0", "4.3", .20, "Images/lane.jpeg"],
+    "Ashleigh": ["Ashleigh", "0x2422858F9C4480c2724A309D58Ffd7Ac8bF65396", "5.0", .33, "Images/ash.jpeg"],
+    "Joséphine": ["Joséphine", "0x8fD00f170FDf3772C5ebdCD90bF257316c69BA45", "4.7", .19, "Images/jo.jpeg"],
+    "Kentdalr": ["Kentdalr", "0x8fD00f170FDf3772C5ebdCD90bF257316c69BA45", "4.1", .16, "Images/kendall.jpeg"]
 }
 
 # A list of the FinTech Finder candidates first names
-people = ["Lane", "Ash", "Jo", "Kendall"]
+people = ["Laighin", "Ashleigh", "Joséphine", "Kentdalr"]
 
 
 def get_people(w3):
@@ -152,37 +152,4 @@ if st.sidebar.button("Send Transaction"):
 get_people(w3)
 
 ################################################################################
-# Step 3: Inspect the Transaction
 
-# Send a test transaction by using the application’s web interface, and then
-# look up the resulting transaction hash in Ganache.
-
-# Complete the following steps:
-
-# 1. From your terminal, navigate to the project folder that contains
-# your `.env` file and the `fintech_finder.py` and `crypto_wallet.py` files.
-# Be sure to activate your Conda `dev` environment if it is not already active.
-
-# 2. To launch the Streamlit application,
-# type `streamlit run fintech_finder.py`.
-
-# 3. On the resulting webpage, select a candidate that you would like to hire
-# from the appropriate drop-down menu. Then, enter the number of hours that you
-# would like to hire them for. (Remember, you do not have a lot of ether in
-# your account, so you cannot hire them for long!)
-
-# 4 Click the Send Transaction button to sign and send the transaction with
-# your Ethereum account information. If the transaction is successfully
-# communicated to Ganache, validated, and added to a block,
-# a resulting transaction hash code will be written to the Streamlit
-# application sidebar.
-
-# 5. Navigate to the Ganache accounts tab and locate your account (index 0).
-    # * Take a screenshot of the address, balance, and transaction (TX) count.
-    # Save this screenshot to the README.md file of your GitHub repository for
-    #  this Challenge assignment.
-
-# 6. Navigate to the Ganache transactions tab and locate the transaction.
-    # * Click the transaction and take a screenshot of it.
-    # Save this screenshot to the README.md file of your GitHub repository for
-    #  this Challenge assignment.
